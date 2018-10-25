@@ -1,0 +1,70 @@
+<div class="panel panel-primary">
+<div class="panel-heading">
+  <h3 class="panel-title">{{book.bookName}}</h3>
+</div>
+<div class="panel-body">
+  <div class="col-xs-10">
+    <div class="row vertical-align">
+      <div class="col-xs-4">
+        <img class="imageClass" [src]="book.coverPhoto">
+      </div>
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-6">
+            Author
+          </div>
+          <div class="col-xs-6">
+            : {{book.bookAuthor}}
+           </div>            
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+              Publish Date
+            </div>
+            <div class="col-xs-6">
+              : {{book.publishDate}}
+             </div>            
+          </div>
+          <div class="row">
+              <div class="col-xs-6">
+                  Publisher
+              </div>
+              <div class="col-xs-6">
+                : {{book.publisher}}
+               </div>            
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    Country
+                </div>
+                <div class="col-xs-6">
+                  : {{book.country}}
+                 </div>            
+              </div>
+              <div class="row">
+                  <div class="col-xs-6">
+                      Language
+                  </div>
+                  <div class="col-xs-6">
+                    : {{book.language}}
+                   </div>            
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        Subject
+                    </div>
+                    <div class="col-xs-6">
+                      : {{book.subject}}
+                     </div>            
+                  </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="panel-footer">
+  <button class="btn btn-primary" (click)="onViewButtonClick()">View</button>
+  <button class="btn btn-primary" (click)="onEditButtonClick()">Edit</button>
+  <button class="btn btn-danger" (click)="onDeleteButtonClick()">Delete</button>
+</div>
+</div>

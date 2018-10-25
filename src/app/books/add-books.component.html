@@ -1,0 +1,81 @@
+<form #booksForm="ngForm" ngNativeValidate (ngSubmit)="saveBooks()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{panelTitle}}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group" [class.has-error]="bookNameControl.invalid && bookNameControl.touched">
+        <label for="bookname" class="control-label">Book Name</label>
+        <input id="bookname" required name="bookname" [(ngModel)]="books.bookName" type="text" class="form-control" #bookNameControl="ngModel">
+        <span class="help-block" *ngIf="bookNameControl.invalid && bookNameControl.touched">
+          Book Name is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="bookAuthorControl.invalid && bookAuthorControl.touched">
+        <label for="author">Author</label>
+        <input id="author" required name="author" [(ngModel)]="books.bookAuthor" type="text" class="form-control" #bookAuthorControl="ngModel">
+        <span class="help-block" *ngIf="bookAuthorControl.invalid && bookAuthorControl.touched">
+          Author Name is required
+        </span>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-5" [class.has-error]="publishYearControl.invalid && publishYearControl.touched">
+          <label for="publishyear">Publish Year</label>
+          <input id="publishyear" required name="publishyear" [(ngModel)]="books.publishDate" type="text" class="form-control" bsDatepicker
+            [bsConfig]="datePickerConfig" placement="right" #publishYearControl="ngModel">
+          <span class="help-block" *ngIf="publishYearControl.invalid && publishYearControl.touched">
+            Publish Year is required
+          </span>
+        </div>
+      </div>
+      <div class="form-group" [class.has-error]="bookPulisherControl.invalid && bookPulisherControl.touched">
+        <label for="publisher">Publisher</label>
+        <input id="publisher" required required name="publisher" [(ngModel)]="books.publisher" type="text" class="form-control" #bookPulisherControl="ngModel">
+        <span class="help-block" *ngIf="bookPulisherControl.invalid && bookPulisherControl.touched">
+          Publisher Name is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="bookCountry.invalid && bookCountry.touched">
+        <label for="country">Country</label>
+        <input id="country" required name="country" required [(ngModel)]="books.country" type="text" class="form-control" #bookCountry="ngModel">
+        <span class="help-block" *ngIf="bookCountry.invalid && bookCountry.touched">
+          Country is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="bookLanguageControl.invalid && bookLanguageControl.touched">
+        <label for="language">Language</label>
+        <input id="language" required name="language" [(ngModel)]="books.language" type="text" class="form-control" #bookLanguageControl="ngModel">
+        <span class="help-block" *ngIf="bookLanguageControl.invalid && bookLanguageControl.touched">
+          Book Language is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="bookSubjectControl.invalid && bookSubjectControl.touched">
+        <label for="subject">Subject</label>
+        <input id="subject" required name="subject" [(ngModel)]="books.subject" type="text" class="form-control" #bookSubjectControl="ngModel">
+        <span class="help-block" *ngIf="bookSubjectControl.invalid && bookSubjectControl.touched">
+          Book Subject is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="bookCoverPhoto.invalid && bookCoverPhoto.touched">
+        <label for="coverPhoto">Cover Photo</label>
+        <input id="coverPhoto" required name="coverPhoto" [(ngModel)]="books.coverPhoto" type="text" class="form-control" #bookCoverPhoto="ngModel">
+        <span class="help-block" *ngIf="bookCoverPhoto.invalid && bookCoverPhoto.touched">
+          Cover Photo is required
+        </span>
+      </div>
+      <div class="form-group">
+        <img [src]="books.coverPhoto" height="200" width="200" *ngIf="priviewPhoto && books.coverPhoto !== '' && books.coverPhoto !== null">
+      </div>
+      <div class="form-group">
+        <button (click)="toggelPreviewPhoto()" type="button" class="btn btn-primary"
+            *ngIf="books.coverPhoto !== '' && books.coverPhoto !== null">
+          {{ priviewPhoto ? "Hide" : "Show"}} Photo</button>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-primary" [disabled]="booksForm.invalid">Save</button>
+    </div>
+  </div>
+</form>
+Angular Generated Form Model: {{booksForm.value| json}}
+<br> Books Data Model : {{books | json}}

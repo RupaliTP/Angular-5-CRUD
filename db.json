@@ -1,0 +1,48 @@
+{
+  "books": [
+    {
+      "bookId": 1,
+      "bookName": "War and Peace",
+      "bookAuthor": "Leo Tolstoy",
+      "publishDate": 1869,
+      "publisher": "The Russian Messenger (serial)",
+      "country": "Russia",
+      "language": "Russian, with some French",
+      "subject": "Historical Novel",
+      "coverPhoto": "/assets/images/War-and-Peace.jpg"
+  },
+  {
+      "bookId": 2,
+      "bookName": "A Brief History of Time",
+      "bookAuthor": "Stephen Hawking",
+      "publishDate": 1888,
+      "publisher": "Bantam Dell Publishing Group",
+      "country": "United Kingdom",
+      "language": "English",
+      "subject": "Cosmology",
+      "coverPhoto": "assets/images/Brief-history-of-time.jpg"
+  },
+  {
+      "bookId": 3,
+      "bookName": "The Shadow Lines",
+      "bookAuthor": "Amitav Ghosh",
+      "publishDate": 1888,
+      "publisher": "Ravi Dayal Publishers",
+      "country": "India",
+      "language": "English",
+      "subject": "Historical Events",
+      "coverPhoto": "/assets/images/The_Shadow-lines.jpg"
+  },
+  {
+      "bookId": 4,
+      "bookName": "Wings of Fire",
+      "bookAuthor": ":APJ abdul kalam",
+      "publishDate": 1999,
+      "publisher": "Universities Press",
+      "country": "India",
+      "language": "English",
+      "subject": "India journey to self-reliance in technology",
+      "coverPhoto": "/assets/images/wings-of-fire.jpg"
+  }
+  ]
+}
